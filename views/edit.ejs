@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Blog Site</h1>
+    <h2>Edit your blog</h2>
+    <form id="create-post" action="/submit" method="POST">
+        <label for="blog-title">Edit blog title</label>
+        <input name="blog-title" type="text" value="<%= editableTitle %>" >
+        <label for="blog-content">Edit blog content</label>
+        <textarea name="blog-content" rows="12"><%= editableContent %></textarea>
+        <button id="create-btn" type="submit">Edit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog site</title>
+    <link rel="stylesheet" href="styles.css">
+    <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <h1>Blog Site</h1>
+    
+    <form id="create-post" action="/submit" method="POST">
+        <label for="blog-title">Enter blog title</label>
+        <input name="blog-title" type="text" value="<%= locals.titleMessage %>">
+        <label for="blog-content">Enter blog content</label>
+        <textarea name="blog-content" rows="8"><%= locals.contentMessage %></textarea>
+        <button id="create-btn" type="submit">Create</button>
+    </form>
+    <h2>Blog Posts</h2>
+    <section id="blog-area">
+        <% if(blogPosts.length == 0){ %>
+            <h3>There are currently no blogs.</h3>
+        <% } else {%>
+        <% blogPosts.forEach((element, index) => { %>
+            <form class="blog-post" method="POST">
+                <input type="hidden" name="blogId" value=<%= "b"+index %> >
+                <div>
+                    <button class="edit" type="submit" formaction="/edit"><i class="fa-solid fa-pen fa-lg"></i></button>
+                <button class="delete" type="submit" formaction="/delete" ><i class="fa-solid fa-trash fa-lg"></i></button>
+                </div>
+                <h2 class="blog-title"><%= element.blogTitle %></h2>
+                <p class="blog-content"><%= element.blogContent %></p>
+            </form>
+        <% }); }%> 
+    </section>
+</body>
+</html>
