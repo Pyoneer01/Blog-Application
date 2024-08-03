@@ -2,6 +2,8 @@
 
 Welcome to my Blog Site! This web application allows users to create, edit, and delete blog posts. It is built using Node.js and EJS for frontend templating, providing a simple interface for managing blog content.
 
+![Blog Application Screenshot](images/blog site screenshot.png)
+
 ## Features
 
 - Create new blog posts
