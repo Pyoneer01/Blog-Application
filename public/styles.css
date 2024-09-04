@@ -4,7 +4,7 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: #4793AF;
-    padding:10px;
+    padding:20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -56,11 +56,11 @@ textarea{
 }
 
 #blog-area{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin:auto 0px;
     width:100%;
-    background-color: skyblue;
+    gap:30px 20px;
 }
 
 #blog-area>h3{
@@ -69,8 +69,8 @@ textarea{
 
 .blog-post{
     text-align:justify;
-    width: auto;
-    height: auto;
+    min-width: 300px;
+    height:auto;
     background-color: #FFC470;
     display:flex;
     flex-direction: column;
@@ -78,6 +78,7 @@ textarea{
     margin:10px 10px;
     padding:25px;
     border-radius: 10px;
+    word-break: break-all;
 }
 
 .blog-title{
